@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Highly configurable chunked file reading/writing",
+  "ABSTRACT" => "Read/Write file handles that are stored as seperate, size-limited files on disk",
   "AUTHOR" => "Dylan William Hardison <dylan\@hardison.net>",
   "BUILD_REQUIRES" => {
     "IO::String" => 0,
@@ -34,6 +34,7 @@ my %WriteMakefileArgs = (
     "IO::Handle::Util" => 0,
     "List::MoreUtils" => 0,
     "Moose" => 0,
+    "Moose::Role" => 0,
     "MooseX::Params::Validate" => 0,
     "MooseX::SetOnce" => 0,
     "MooseX::Types::Moose" => 0,
@@ -44,7 +45,7 @@ my %WriteMakefileArgs = (
     "namespace::clean" => 0,
     "overload" => 0
   },
-  "VERSION" => "0.001",
+  "VERSION" => "0.002",
   "test" => {
     "TESTS" => "t/*.t"
   }

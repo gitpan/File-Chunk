@@ -1,6 +1,8 @@
+# ABSTRACT: Provide line-based chunk file writing as a file-handle-like object.
+
 package File::Chunk::Writer;
 {
-  $File::Chunk::Writer::VERSION = '0.001';
+  $File::Chunk::Writer::VERSION = '0.002';
 }
 BEGIN {
   $File::Chunk::Writer::AUTHORITY = 'cpan:DHARDISON';
@@ -117,3 +119,28 @@ sub print {
 __PACKAGE__->meta->make_immutable;
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+File::Chunk::Writer - Provide line-based chunk file writing as a file-handle-like object.
+
+=head1 VERSION
+
+version 0.002
+
+=head1 AUTHOR
+
+Dylan William Hardison <dylan@hardison.net>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Infinity Interactive, Inc.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

@@ -1,6 +1,8 @@
+# ABSTRACT: 
+
 package File::Chunk::Handle;
 {
-  $File::Chunk::Handle::VERSION = '0.001';
+  $File::Chunk::Handle::VERSION = '0.002';
 }
 BEGIN {
   $File::Chunk::Handle::AUTHORITY = 'cpan:DHARDISON';
@@ -15,6 +17,7 @@ use MooseX::Params::Validate;
 
 use File::Chunk::Writer;
 use File::Chunk::Reader;
+use File::Chunk::Format::Hex;
 
 use namespace::clean;
 
@@ -46,18 +49,11 @@ has 'chunk_filename_format' => (
     default  => '%.8x.chunk',
 );
 
-has 'chunk_filename_regexp' => (
-    is      => 'ro',
-    isa     => RegexpRef,
-    default => sub {qr/^[[:xdigit:]]{8}\.chunk$/},
-);
-
 has 'file_dir' => (
     is      => 'ro',
     isa     => Dir,
     lazy    => 1,
     builder => '_build_file_dir',
-    #handles => { chunk_dir => 'subdir' },
 );
 
 sub chunk_dir {
@@ -94,8 +90,8 @@ sub new_writer {
 sub new_reader {
     my $self = shift;
     my $reader = File::Chunk::Reader->new(
-        file_dir              => $self->file_dir,
-        chunk_filename_regexp => $self->chunk_filename_regexp,
+        file_dir => $self->file_dir,
+        format   => File::Chunk::Format::Hex->new,
     );
 }
 
@@ -127,3 +123,28 @@ sub _build_file_dir {
 __PACKAGE__->meta->make_immutable;
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+File::Chunk::Handle -  
+
+=head1 VERSION
+
+version 0.002
+
+=head1 AUTHOR
+
+Dylan William Hardison <dylan@hardison.net>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2012 by Infinity Interactive, Inc.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut

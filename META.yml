@@ -1,5 +1,5 @@
 ---
-abstract: 'Highly configurable chunked file reading/writing'
+abstract: 'Read/Write file handles that are stored as seperate, size-limited files on disk'
 author:
   - 'Dylan William Hardison <dylan@hardison.net>'
 build_requires:
@@ -13,7 +13,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.300014, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Zilla version 4.300030, CPAN::Meta::Converter version 2.120921'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -26,6 +26,7 @@ requires:
   IO::Handle::Util: 0
   List::MoreUtils: 0
   Moose: 0
+  Moose::Role: 0
   MooseX::Params::Validate: 0
   MooseX::SetOnce: 0
   MooseX::Types::Moose: 0
@@ -35,5 +36,5 @@ requires:
   namespace::autoclean: 0
   namespace::clean: 0
   overload: 0
-version: 0.001
+version: 0.002
 x_authority: cpan:DHARDISON
