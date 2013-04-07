@@ -2,7 +2,7 @@
 
 package File::Chunk::Iter;
 {
-  $File::Chunk::Iter::VERSION = '0.002';
+  $File::Chunk::Iter::VERSION = '0.003';
 }
 BEGIN {
   $File::Chunk::Iter::AUTHORITY = 'cpan:DHARDISON';
@@ -104,7 +104,7 @@ File::Chunk::Iter - Wrap a callback iterator to allow variable look-ahead.
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 
@@ -112,7 +112,7 @@ Dylan William Hardison <dylan@hardison.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Infinity Interactive, Inc.
+This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

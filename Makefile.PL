@@ -16,15 +16,15 @@ my %WriteMakefileArgs = (
     "Test::More" => 0,
     "Test::TempDir" => 0,
     "Text::CSV_XS" => 0,
-    "ok" => 0,
-    "strict" => 0,
-    "warnings" => 0
+    "ok" => 0
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "File-Chunk",
-  "EXE_FILES" => [],
+  "EXE_FILES" => [
+    "bin/file-chunk-write"
+  ],
   "LICENSE" => "perl",
   "NAME" => "File::Chunk",
   "PREREQ_PM" => {
@@ -35,6 +35,7 @@ my %WriteMakefileArgs = (
     "List::MoreUtils" => 0,
     "Moose" => 0,
     "Moose::Role" => 0,
+    "MooseX::Getopt::GLD" => 0,
     "MooseX::Params::Validate" => 0,
     "MooseX::SetOnce" => 0,
     "MooseX::Types::Moose" => 0,
@@ -43,9 +44,11 @@ my %WriteMakefileArgs = (
     "YAML::XS" => 0,
     "namespace::autoclean" => 0,
     "namespace::clean" => 0,
-    "overload" => 0
+    "overload" => 0,
+    "strict" => 0,
+    "warnings" => 0
   },
-  "VERSION" => "0.002",
+  "VERSION" => "0.003",
   "test" => {
     "TESTS" => "t/*.t"
   }

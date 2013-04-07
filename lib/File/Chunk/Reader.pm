@@ -1,7 +1,7 @@
 # ABSTRACT: Provide getline() interface to a file chunk directory.
 package File::Chunk::Reader;
 {
-  $File::Chunk::Reader::VERSION = '0.002';
+  $File::Chunk::Reader::VERSION = '0.003';
 }
 BEGIN {
   $File::Chunk::Reader::AUTHORITY = 'cpan:DHARDISON';
@@ -109,7 +109,7 @@ File::Chunk::Reader - Provide getline() interface to a file chunk directory.
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 METHODS
 
@@ -132,7 +132,7 @@ Dylan William Hardison <dylan@hardison.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Infinity Interactive, Inc.
+This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

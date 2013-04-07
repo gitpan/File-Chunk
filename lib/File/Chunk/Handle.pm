@@ -2,7 +2,7 @@
 
 package File::Chunk::Handle;
 {
-  $File::Chunk::Handle::VERSION = '0.002';
+  $File::Chunk::Handle::VERSION = '0.003';
 }
 BEGIN {
   $File::Chunk::Handle::AUTHORITY = 'cpan:DHARDISON';
@@ -31,6 +31,13 @@ has 'file' => (
     handles  => ['stringify'],
 );
 
+has 'file_dir' => (
+    is      => 'ro',
+    isa     => Dir,
+    lazy    => 1,
+    builder => '_build_file_dir',
+);
+
 has 'chunk_line_limit' => (
     is      => 'ro',
     isa     => Int,
@@ -43,17 +50,10 @@ has 'chunk_dirname_format' => (
     default => '%s',
 );
 
-has 'chunk_filename_format' => (
-    is       => 'ro',
-    isa      => Str,
-    default  => '%.8x.chunk',
-);
-
-has 'file_dir' => (
+has 'format' => (
     is      => 'ro',
-    isa     => Dir,
-    lazy    => 1,
-    builder => '_build_file_dir',
+    does    => 'File::Chunk::Format',
+    default => sub { File::Chunk::Format::Hex->new },
 );
 
 sub chunk_dir {
@@ -74,9 +74,9 @@ sub new_writer {
     );
 
     my $writer = File::Chunk::Writer->new(
-        chunk_dir             => $self->chunk_dir($key),
-        chunk_line_limit      => $limit,
-        chunk_filename_format => $self->chunk_filename_format,
+        chunk_dir        => $self->chunk_dir($key),
+        chunk_line_limit => $limit,
+        format           => $self->format,
     );
 
     if (-e $writer->chunk_dir) {
@@ -91,7 +91,7 @@ sub new_reader {
     my $self = shift;
     my $reader = File::Chunk::Reader->new(
         file_dir => $self->file_dir,
-        format   => File::Chunk::Format::Hex->new,
+        format   => $self->format,
     );
 }
 
@@ -134,7 +134,7 @@ File::Chunk::Handle -
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 
@@ -142,7 +142,7 @@ Dylan William Hardison <dylan@hardison.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Infinity Interactive, Inc.
+This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -2,7 +2,7 @@
 
 package File::Chunk::Writer;
 {
-  $File::Chunk::Writer::VERSION = '0.002';
+  $File::Chunk::Writer::VERSION = '0.003';
 }
 BEGIN {
   $File::Chunk::Writer::AUTHORITY = 'cpan:DHARDISON';
@@ -41,9 +41,9 @@ has 'chunk_line_limit' => (
     required => 1,
 );
 
-has 'chunk_filename_format' => (
+has 'format' => (
     is       => 'ro',
-    isa      => 'Str',
+    does     => 'File::Chunk::Format',
     required => 1,
 );
 
@@ -82,9 +82,7 @@ after '_next_chunk' => sub { shift->_reset_chunk_line_count };
 sub _build_chunk {
     my $self = shift;
 
-    my $filename = $self->chunk_dir->file(
-        sprintf( $self->chunk_filename_format, $self->_next_chunk_id - 1 ) 
-    );
+    my $filename = $self->chunk_dir->file( $self->format->encode_chunk_filename( $self->_next_chunk_id - 1 ) );
 
     my $fh = $filename->openw;
     if ($self->has_binmode) {
@@ -130,7 +128,7 @@ File::Chunk::Writer - Provide line-based chunk file writing as a file-handle-lik
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 AUTHOR
 
@@ -138,7 +136,7 @@ Dylan William Hardison <dylan@hardison.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Infinity Interactive, Inc.
+This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -2,7 +2,7 @@
 
 package File::Chunk::Format;
 {
-  $File::Chunk::Format::VERSION = '0.002';
+  $File::Chunk::Format::VERSION = '0.003';
 }
 BEGIN {
   $File::Chunk::Format::AUTHORITY = 'cpan:DHARDISON';
@@ -12,7 +12,7 @@ use namespace::autoclean;
 
 
 
-requires 'find_chunk_files';
+requires 'find_chunk_files', 'decode_chunk_filename', 'encode_chunk_filename';
 
 
 1;
@@ -27,7 +27,7 @@ File::Chunk::Format - Role for findings (TODO: generating) chunk file names.
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 METHODS
 
@@ -41,7 +41,7 @@ Dylan William Hardison <dylan@hardison.net>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2012 by Infinity Interactive, Inc.
+This software is copyright (c) 2013 by Infinity Interactive, Inc.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
