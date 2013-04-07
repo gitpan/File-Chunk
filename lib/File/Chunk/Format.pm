@@ -2,7 +2,7 @@
 
 package File::Chunk::Format;
 {
-  $File::Chunk::Format::VERSION = '0.003';
+  $File::Chunk::Format::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Format::AUTHORITY = 'cpan:DHARDISON';
@@ -27,7 +27,7 @@ File::Chunk::Format - Role for findings (TODO: generating) chunk file names.
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 METHODS
 

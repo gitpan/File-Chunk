@@ -2,7 +2,7 @@
 
 package File::Chunk::Format::IntBare;
 {
-  $File::Chunk::Format::IntBare::VERSION = '0.003';
+  $File::Chunk::Format::IntBare::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Format::IntBare::AUTHORITY = 'cpan:DHARDISON';
@@ -46,7 +46,7 @@ File::Chunk::Format::IntBare - Chunk files stored as plain integers.
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

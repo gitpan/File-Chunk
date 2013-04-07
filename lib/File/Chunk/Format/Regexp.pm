@@ -2,7 +2,7 @@
 
 package File::Chunk::Format::Regexp;
 {
-  $File::Chunk::Format::Regexp::VERSION = '0.003';
+  $File::Chunk::Format::Regexp::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Format::Regexp::AUTHORITY = 'cpan:DHARDISON';
@@ -54,7 +54,7 @@ File::Chunk::Format::Regexp - Chunk file regex base role
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

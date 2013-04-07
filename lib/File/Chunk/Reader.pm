@@ -1,7 +1,7 @@
 # ABSTRACT: Provide getline() interface to a file chunk directory.
 package File::Chunk::Reader;
 {
-  $File::Chunk::Reader::VERSION = '0.003';
+  $File::Chunk::Reader::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Reader::AUTHORITY = 'cpan:DHARDISON';
@@ -109,7 +109,7 @@ File::Chunk::Reader - Provide getline() interface to a file chunk directory.
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 METHODS
 

@@ -1,6 +1,6 @@
 package File::Chunk::Script;
 {
-  $File::Chunk::Script::VERSION = '0.003';
+  $File::Chunk::Script::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Script::AUTHORITY = 'cpan:DHARDISON';
@@ -37,7 +37,7 @@ File::Chunk::Script
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

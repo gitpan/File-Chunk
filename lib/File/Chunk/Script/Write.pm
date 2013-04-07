@@ -1,7 +1,7 @@
 # ABSTRACT: Write chunked files from the shell.
 package File::Chunk::Script::Write;
 {
-  $File::Chunk::Script::Write::VERSION = '0.003';
+  $File::Chunk::Script::Write::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Script::Write::AUTHORITY = 'cpan:DHARDISON';
@@ -46,7 +46,7 @@ sub new_handle {
 
 sub run {
     my $self = shift;
-    my $h      = $self->new_handle($file);
+    my $h      = $self->new_handle($self->output_file);
     my $writer = $h->new_writer($self->key, $self->has_limit ? ( $self->limit ) : () );
 
     while (<STDIN>) {
@@ -68,7 +68,7 @@ File::Chunk::Script::Write - Write chunked files from the shell.
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

@@ -1,7 +1,7 @@
 
 
 This archive contains the distribution File-Chunk,
-version 0.003:
+version 0.0035:
 
   Read/Write file handles that are stored as seperate, size-limited files on disk
 

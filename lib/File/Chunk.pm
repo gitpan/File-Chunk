@@ -2,7 +2,7 @@
 
 package File::Chunk;
 {
-  $File::Chunk::VERSION = '0.003';
+  $File::Chunk::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::AUTHORITY = 'cpan:DHARDISON';
@@ -27,7 +27,7 @@ File::Chunk - Read/Write file handles that are stored as seperate, size-limited 
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@
 
 package File::Chunk::Handle;
 {
-  $File::Chunk::Handle::VERSION = '0.003';
+  $File::Chunk::Handle::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Handle::AUTHORITY = 'cpan:DHARDISON';
@@ -134,7 +134,7 @@ File::Chunk::Handle -
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

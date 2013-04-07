@@ -2,7 +2,7 @@
 
 package File::Chunk::Writer;
 {
-  $File::Chunk::Writer::VERSION = '0.003';
+  $File::Chunk::Writer::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Writer::AUTHORITY = 'cpan:DHARDISON';
@@ -128,7 +128,7 @@ File::Chunk::Writer - Provide line-based chunk file writing as a file-handle-lik
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 

@@ -2,7 +2,7 @@
 
 package File::Chunk::Format::Hex;
 {
-  $File::Chunk::Format::Hex::VERSION = '0.003';
+  $File::Chunk::Format::Hex::VERSION = '0.0035';
 }
 BEGIN {
   $File::Chunk::Format::Hex::AUTHORITY = 'cpan:DHARDISON';
@@ -46,7 +46,7 @@ File::Chunk::Format::Hex - Chunk files stored in $X.chunk where $X is an eight "
 
 =head1 VERSION
 
-version 0.003
+version 0.0035
 
 =head1 AUTHOR
 
